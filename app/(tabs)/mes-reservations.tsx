@@ -77,7 +77,7 @@ export default function ReservationsScreen() {
           const film = seance?.film;
           const filmTitre = film?.title ?? 'Film non chargé';
           const imageUri = film?.imageName
-            ? `http://10.0.2.2:8000/images/Film/${film.imageName}`
+             ? `https://bucketeer-b78e6166-923a-41f5-8eac-7295c143deb0.s3.eu-west-1.amazonaws.com/images/Film/${film.imageName}`
             : 'https://via.placeholder.com/300x200?text=Pas+de+visuel';
 
           return (
@@ -85,8 +85,8 @@ export default function ReservationsScreen() {
               <Image source={{ uri: imageUri }} style={styles.poster} resizeMode="cover" />
               <Text style={styles.title}>{filmTitre}</Text>
               <Text>
-  Début : {seance && typeof seance === 'object' ? new Date(seance.dateHeureDebut || seance.dateHeure).toLocaleString() : 'Date non disponible'}
-</Text>
+                  Début : {seance && typeof seance === 'object' ? new Date(seance.dateHeureDebut || seance.dateHeure).toLocaleString() : 'Date non disponible'}
+              </Text>
               <Text>Places réservées : {res.placeReserve}</Text>
               <Text>Prix total : {res.prix} €</Text>
               <Text>Sièges : {res.seats && res.seats.length > 0 ? res.seats.join(', ') : 'Aucun siège'}</Text>

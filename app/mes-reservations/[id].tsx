@@ -3,14 +3,14 @@ import api from '@/lib/axiosInstance';
 import { router, useLocalSearchParams } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import {
-    ActivityIndicator,
-    Image,
-    SafeAreaView,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View
+  ActivityIndicator,
+  Image,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View
 } from 'react-native';
 
 type Film = {
@@ -41,7 +41,7 @@ type Reservation = {
   qrCodePath: string;
 };
 
-// ...imports et types inchangés
+
 
 export default function ReservationDetail() {
   const { id } = useLocalSearchParams();
@@ -94,7 +94,7 @@ export default function ReservationDetail() {
       <ScrollView contentContainerStyle={styles.scrollContainer} showsVerticalScrollIndicator={false}>
         <View style={styles.mainCard}>
           <Image
-            source={{ uri: `http://10.0.2.2:8000/images/Film/${seance.film.imageName}` }}
+            source={{ uri: `https://bucketeer-b78e6166-923a-41f5-8eac-7295c143deb0.s3.eu-west-1.amazonaws.com/images/Film/${seance.film.imageName}` }}
             style={styles.image}
           />
           <Text style={styles.title}>{seance.film.title}</Text>
@@ -127,7 +127,7 @@ export default function ReservationDetail() {
 
           <Text style={[styles.sectionTitle, { marginTop: 25 }]}>QR Code</Text>
           <Image
-            source={{ uri: `http://10.0.2.2:8000${reservation.qrCodePath}` }}
+            source={{ uri: reservation.qrCodePath }}
             style={styles.qrCode}
           />
         </View>

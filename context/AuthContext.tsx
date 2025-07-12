@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   const login = async (username: string, password: string) => {
-    const res = await axios.post('http://10.0.2.2:8000/api/login_check', {
+    const res = await axios.post('https://cinephoriaappj-2943b0896e8f.herokuapp.com/api/login_check', {
       username,
       password,
     });

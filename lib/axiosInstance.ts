@@ -3,7 +3,7 @@ import { router } from 'expo-router';
 import * as SecureStore from 'expo-secure-store';
 
 const api = axios.create({
-  baseURL: 'http://10.0.2.2:8000/api',
+  baseURL: 'https://cinephoriaappj-2943b0896e8f.herokuapp.com/api',
 });
 
 api.interceptors.request.use(async (config) => {
